@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkMode</title>
+    
+    <style>
+        html, body{ 
+            padding : 0; margin : 0; 
+            width: 100%;height: 100%;
+        }
+        .container{
+            width: 100%; height: 100%;
+            background-color : #fff;
+        }
+        /* header Design */
+        header{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav{
+            list-style: none;
+            display: flex;
+            margin-left: 10px;
+        }
+        .list{
+            cursor: pointer;
+            font-weight: 600;
+            padding : 5px;
+            margin-right: 20px;
+        }
+        header>div{
+            display: flex;
+        }
+        header>div>span{
+            margin-right: 3px;
+            font-size: 12px;
+            align-self: center;
+            color : #000;
+        }
+        input[type="checkbox"]{
+            position: relative;
+            width: 40px;
+            height: 20px;
+            -webkit-appearance: none;
+            background-color: #e2e2e2;
+            border-radius: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, .2);
+        }
+        input:checked[type="checkbox"]{
+            background-color : #50bcdf;
+        }
+
+        input[type="checkbox"]::before{
+            content:"";
+            position: absolute;
+            top : 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            transform: scale(0.9);
+            transition : .5s;
+        }
+        input:checked[type="checkbox"]::before{
+            left:20px;
+        }
+        /* content design */
+        .home{
+            width: 100%;
+            height: 90%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .home>.text{
+            width: 45%;
+        }
+        .home>.text>h1{
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            transition: .5s;
+        }
+        .home>.text>p{
+            font-size:1rem;
+            color :#3f3f3f;
+            padding-bottom: 1rem;
+        }
+        .home>.text>.button{
+            cursor: pointer;
+            padding : 7px;
+            border : 2px solid #50bcdf;
+            border-radius: 10px;
+            transition: .5s;
+        }
+        .home>.text>.button:hover{
+            background-color: #50bcdf;
+        }
+        .home>.img{
+            width: 45%;
+            height: 50%;
+            background-image: url("./img1.png");
+            background-size: cover;
+        }
+
+        /* darkmode Design */
+        .container.darkmode{
+            background-color: black;
+        }
+        .container.darkmode header,
+        .container.darkmode p,
+        .container.darkmode .button{
+            color:#fff;
+        }
+        .container.darkmode>header>div>span, 
+        .container.darkmode>.home>.text>h1{
+            color : #50bcdf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <li class="list">Home</li>
+                <li class="list">Lorem ipsum</li>
+            </nav>
+            <div>
+                <span>darkmode</span>
+                <input type="checkbox" name="toggleBtn" id="toggleBtn">
+            </div>
+        </header>
+        <section class="home">
+            <div class="text">
+                <h1>Dark Mode Design</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, maiores suscipit et,
+                    soluta fugiat cupiditate eos dicta officiis voluptatum quam corrupti,
+                    eum quos voluptate deserunt veritatis sunt ipsa quas. Obcaecati.</p>
+                <span class="button">read more</span>
+            </div>
+            <div class="img"></div>
+        </section>
+    </div>
+    <script>
+        document.getElementById("toggleBtn").addEventListener('click', function(){
+        document.querySelector(".container").classList.toggle('darkmode');
+        })
+    </script>
+</body>
+</html>
