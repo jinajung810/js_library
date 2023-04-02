@@ -23,7 +23,7 @@
         .darkMode h3, 
         .darkMode p, 
         .darkMode li {color:#fff;}
-        
+        .darkMode button {background: #fff; color:#000}
     </style>
 </head>
 <body>
@@ -79,8 +79,13 @@
     </script>
 
     <script>
-        document.getElementById("toggleBtn").addEventListener('click', function(){
-        document.querySelector("body").classList.toggle('darkMode');
+        let toggle = document.getElementById("toggleBtn");
+        let body = document.querySelector("body");
+
+        toggle.addEventListener('click', function(){
+            body.classList.toggle('darkMode');
+
+            toggle.classList.contains('btn-outline-dark') ? toggle.innerText = "Light" : toggle.innerText = "Dark";
         })
     </script>
 </body>
