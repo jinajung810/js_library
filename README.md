@@ -48,11 +48,14 @@
         })
     </script>
     ```
-    1 -> 코드 줄이기 
+    1. -> 코드 줄이기 
     ```javascript
     * if ~ else -> 삼항연산자로 변경
     toggle.classList.contains('btn-outline-dark') ? toggle.innerText = "Light" : toggle.innerText = "Dark";
     ```
+    
+    1. -> 문제
+    - 처음 클릭했을 때 텍스트가 dark-> light로 변경된 후, <br> 다시 클릭하면 light->dark로 변경 안됨. 
     
 2. jquery 에서 javascript로 rewrite 해보기 <br>
 참고: https://stackoverflow.com/questions/69003055/how-to-rewrite-in-pure-javascript-code-from-jquery-code
